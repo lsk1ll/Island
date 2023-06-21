@@ -1,0 +1,159 @@
+limits:
+  Wolf:
+    weight: 50.0
+    maxAmount: 30
+    moveSpeed: 3
+    satiationFoodAmount: 8.0
+  Python:
+    weight: 15.0
+    maxAmount: 30
+    moveSpeed: 1
+    satiationFoodAmount: 3.0
+  Fox:
+    weight: 8.0
+    maxAmount: 30
+    moveSpeed: 2
+    satiationFoodAmount: 2.0
+  Bear:
+    weight: 500.0
+    maxAmount: 5
+    moveSpeed: 2
+    satiationFoodAmount: 80.0
+  Eagle:
+    weight: 6.0
+    maxAmount: 20
+    moveSpeed: 1
+    satiationFoodAmount: 3.0
+  Horse:
+    weight: 400.0
+    maxAmount: 20
+    moveSpeed: 4
+    satiationFoodAmount: 60.0
+  Deer:
+    weight: 300.0
+    maxAmount: 20
+    moveSpeed: 4
+    satiationFoodAmount: 50.0
+  Rabbit:
+    weight: 2.0
+    maxAmount: 150
+    moveSpeed: 2
+    satiationFoodAmount: 0.45
+  Mouse:
+    weight: 0.05
+    maxAmount: 500
+    moveSpeed: 1
+    satiationFoodAmount: 0.01
+  Goat:
+    weight: 60.0
+    maxAmount: 140
+    moveSpeed: 3
+    satiationFoodAmount: 10.0
+  Sheep:
+    weight: 700.0
+    maxAmount: 140
+    moveSpeed: 3
+    satiationFoodAmount: 15.0
+  Boar:
+    weight: 400.0
+    maxAmount: 50
+    moveSpeed: 2
+    satiationFoodAmount: 50.0
+  Buffalo:
+    weight: 700.0
+    maxAmount: 10
+    moveSpeed: 3
+    satiationFoodAmount: 100.0
+  Duck:
+    weight: 1.0
+    maxAmount: 200
+    moveSpeed: 4
+    satiationFoodAmount: 0.15
+  Caterpillar:
+    weight: 0.01
+    maxAmount: 1000
+    moveSpeed: 0
+    satiationFoodAmount: 0.0
+  Plants:
+    weight: 1.0
+    maxAmount: 200
+
+icons:
+  Wolf: 🐺
+  Python: 🐍
+  Fox: 🦊
+  Bear: 🐻
+  Eagle: 🦅
+  Horse: 🐎
+  Deer: 🦌
+  Rabbit: 🐇
+  Mouse: 🐁
+  Goat: 🐐
+  Sheep: 🐑
+  Boar: 🐗
+  Buffalo: 🐃
+  Duck: 🦆
+  Caterpillar: 🐛
+  Plants: 🌿
+
+foodChance:
+  Wolf:
+    Boar: 15
+    Mouse: 80
+    Horse: 10
+    Rabbit: 60
+    Sheep: 70
+    Duck: 40
+    Goat: 60
+    Deer: 15
+    Buffalo: 10
+  Python:
+    Mouse: 40
+    Rabbit: 20
+    Duck: 10
+    Fox: 15
+  Fox:
+    Mouse: 90
+    Rabbit: 70
+    Duck: 60
+    Caterpillar: 40
+  Bear:
+    Boar: 50
+    Mouse: 90
+    Python: 80
+    Horse: 40
+    Rabbit: 80
+    Sheep: 70
+    Duck: 10
+    Goat: 70
+    Deer: 80
+    Buffalo: 20
+  Eagle:
+    Mouse: 90
+    Rabbit: 90
+    Duck: 80
+    Fox: 10
+  Horse:
+    Plants: 100
+  Deer:
+    Plants: 100
+  Rabbit:
+    Plants: 100
+  Mouse:
+    Caterpillar: 90
+    Plants: 100
+  Goat:
+    Plants: 100
+  Sheep:
+    Plants: 100
+  Boar:
+    Mouse: 50
+    Caterpillar: 90
+    Plants: 100
+  Buffalo:
+    Plants: 100
+  Duck:
+    Caterpillar: 90
+    Plants: 100
+  Caterpillar:
+    Plants: 100
