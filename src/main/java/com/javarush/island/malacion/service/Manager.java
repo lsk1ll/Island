@@ -16,21 +16,23 @@ import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
-import java.util.concurrent.locks.ReentrantLock;
 
 public class Manager {
     private Map<Class<Entity>, ExecutorService> executorMap;
     private Map<Class<? extends Entity>, Set<Entity>> entityMap;
     private Map<String, Map<String, Object>> limits;
-    private Island island;
-    private ReentrantLock lock;
 
+
+    private Island island;
+
+    public Island getIsland() {
+        return island;
+    }
     public Manager(Island island) {
         this.island = island;
         executorMap = new HashMap<>();
         entityMap = new HashMap<>();
         Yaml yaml = new Yaml();
-        lock = new ReentrantLock();
         try {
             FileInputStream inputStream = new FileInputStream("config.yaml");
             Map<String, Object> data = yaml.load(inputStream);

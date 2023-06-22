@@ -1,6 +1,7 @@
 package com.javarush.island.malacion.view;
 
 import com.javarush.island.malacion.enums.Mode;
+import com.javarush.island.malacion.exception.InvalidCoordinatesException;
 import com.javarush.island.malacion.service.Manager;
 
 import java.util.Scanner;
@@ -39,6 +40,10 @@ public class ConsoleView implements View {
                 int posX = scanner.nextInt();
                 System.out.println("Введите координату Y: ");
                 int posY = scanner.nextInt();
+                if(posX  < manager.getIsland().getRow() || posY < manager.getIsland().getCol())
+                {
+                    throw new InvalidCoordinatesException();
+                }
                 counterExecutor.scheduleAtFixedRate(() -> {
                     manager.runSimulation(Mode.LOCATION.name(), posX, posY);
                 }, 0, 3, TimeUnit.SECONDS);
@@ -48,6 +53,10 @@ public class ConsoleView implements View {
                 posX = scanner.nextInt();
                 System.out.println("Введите координату Y: ");
                 posY = scanner.nextInt();
+                if(posX  < manager.getIsland().getRow() || posY < manager.getIsland().getCol())
+                {
+                    throw new InvalidCoordinatesException();
+                }
                 counterExecutor.scheduleAtFixedRate(() -> {
                     manager.runSimulation(Mode.DETAILED_LOCATION.name(), posX, posY);
                 }, 0, 3, TimeUnit.SECONDS);
