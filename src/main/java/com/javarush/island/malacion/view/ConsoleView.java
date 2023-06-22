@@ -36,31 +36,35 @@ public class ConsoleView implements View {
                 }, 0, 3, TimeUnit.SECONDS);
                 break;
             case 3:
-                System.out.println("Введите координату X: ");
-                int posX = scanner.nextInt();
-                System.out.println("Введите координату Y: ");
-                int posY = scanner.nextInt();
-                if(posX  >= manager.getIsland().getRow() || posY >= manager.getIsland().getCol())
-                {
-                    throw new InvalidCoordinatesException();
-                }
-                counterExecutor.scheduleAtFixedRate(() -> {
-                    manager.runSimulation(Mode.LOCATION.name(), posX, posY);
-                }, 0, 3, TimeUnit.SECONDS);
+                    System.out.println("Введите координату X: ");
+                    int posX = scanner.nextInt();
+                    System.out.println("Введите координату Y: ");
+                    int posY = scanner.nextInt();
+
+                    if (posX >= manager.getIsland().getRow() || posY >= manager.getIsland().getCol()) {
+                        throw new InvalidCoordinatesException();
+                    }
+
+                    counterExecutor.scheduleAtFixedRate(() -> {
+                        manager.runSimulation(Mode.LOCATION.name(), posX, posY);
+                    }, 0, 3, TimeUnit.SECONDS);
                 break;
             case 4:
-                System.out.println("Введите координату X: ");
-                posX = scanner.nextInt();
-                System.out.println("Введите координату Y: ");
-                posY = scanner.nextInt();
-                if(posX  >= manager.getIsland().getRow() || posY >= manager.getIsland().getCol())
-                {
-                    throw new InvalidCoordinatesException();
-                }
-                counterExecutor.scheduleAtFixedRate(() -> {
-                    manager.runSimulation(Mode.DETAILED_LOCATION.name(), posX, posY);
-                }, 0, 3, TimeUnit.SECONDS);
-                break;
+                    System.out.println("Введите координату X: ");
+                    posX = scanner.nextInt();
+                    System.out.println("Введите координату Y: ");
+                    posY = scanner.nextInt();
+
+                    if (posX >= manager.getIsland().getRow() || posY >= manager.getIsland().getCol()) {
+                        throw new InvalidCoordinatesException();
+                    }
+
+                    counterExecutor.scheduleAtFixedRate(() -> {
+                        manager.runSimulation(Mode.DETAILED_LOCATION.name(), posX, posY);
+                    }, 0, 3, TimeUnit.SECONDS);
+                    break;
+            default:
+                throw new IllegalStateException();
         }
 
 
