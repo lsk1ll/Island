@@ -37,7 +37,7 @@ public class Island {
     }
 
     public int getRow() {
-        return row;
+        return this.row;
     }
 
     public int getCol() {

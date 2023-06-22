@@ -40,7 +40,7 @@ public class ConsoleView implements View {
                 int posX = scanner.nextInt();
                 System.out.println("Введите координату Y: ");
                 int posY = scanner.nextInt();
-                if(posX  < manager.getIsland().getRow() || posY < manager.getIsland().getCol())
+                if(posX  >= manager.getIsland().getRow() || posY >= manager.getIsland().getCol())
                 {
                     throw new InvalidCoordinatesException();
                 }
@@ -53,7 +53,8 @@ public class ConsoleView implements View {
                 posX = scanner.nextInt();
                 System.out.println("Введите координату Y: ");
                 posY = scanner.nextInt();
-                if(posX  < manager.getIsland().getRow() || posY < manager.getIsland().getCol())
+                System.out.println(manager.getIsland().getRow() );
+                if(posX  >= manager.getIsland().getRow() || posY >= manager.getIsland().getCol())
                 {
                     throw new InvalidCoordinatesException();
                 }
