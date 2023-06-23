@@ -54,17 +54,21 @@ public abstract class Animal extends Entity implements EatAbility, Movable {
         Map<String, Object> data = yaml.load(inputStream);
         Map<String, Map<String, Object>> limits = (Map<String, Map<String, Object>>) data.get("limits");
         int maxAmount = (int) limits.get(this.getClass().getSimpleName()).get("maxAmount");
-        if (getCurrentLocation().getLocation().get(this.getClass()).size() < maxAmount) {
-            first.acquireLock();
-            try {
-                second.acquireLock();
+
+        List<Island.Location> locations = Arrays.asList(first, second);
+        Collections.sort(locations, Comparator.comparingInt(System::identityHashCode));
+
+        locations.get(0).acquireLock();
+        try {
+            locations.get(1).acquireLock();
+            if (getCurrentLocation().getLocation().get(this.getClass()).size() < maxAmount) {
                 getCurrentLocation().getLocation().get(this.getClass()).remove(this);
                 setCurrentLocation(location);
                 location.getLocation().get(this.getClass()).add(this);
-            }finally {
-                second.releaseLock();
-                first.releaseLock();
             }
+        } finally {
+            locations.get(1).releaseLock();
+            locations.get(0).releaseLock();
         }
     }
     public Island.Location findLocation(int steps)

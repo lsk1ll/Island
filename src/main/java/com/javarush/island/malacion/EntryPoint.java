@@ -10,7 +10,7 @@ import com.javarush.island.malacion.view.View;
 public class EntryPoint {
     public static void main(String[] args){
 
-        Island island = new Island(10, 5);
+        Island island = new Island(5, 5);
         Manager manager = new Manager(island);
         View view = new ConsoleView();
         Controller controller = new Controller(view);

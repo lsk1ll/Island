@@ -28,7 +28,6 @@ public class ConsoleView implements View {
                 counterExecutor.scheduleAtFixedRate(() -> {
                     manager.runSimulation(Mode.DEFAULT.name());
                 }, 0, 3, TimeUnit.SECONDS);
-                //printLoop(manager);
                 break;
             case 2:
                 counterExecutor.scheduleAtFixedRate(() -> {
